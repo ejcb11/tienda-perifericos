@@ -1,0 +1,59 @@
+.acordeon-filas {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fila-body .acordeon-filas {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+.acordeon-fila {
+  cursor: pointer;
+  transition: background 0.2s;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.acordeon-fila:hover { background: rgba(255, 255, 255, 0.06); }
+.acordeon-fila.abierto { background: rgba(62, 231, 184, 0.05); }
+
+.acordeon-fila + .acordeon-fila {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.fila-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  gap: 12px;
+}
+
+.fila-titulo {
+  color: #f1f5f9;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.fila-icono {
+  color: #3ee7b8;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.fila-body {
+  padding: 0 20px 16px;
+}
+
+.fila-texto {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+}
