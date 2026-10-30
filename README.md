@@ -21,7 +21,7 @@
 
 **GearStore** es una tienda web especializada en periféricos de alto rendimiento y hardware gaming construida con **React 19** y **Vite**. 
 
-El núcleo del proyecto reside en el desarrollo de un **sistema propio de componentes UI desacoplados y reutilizables**, integrando control de estados reactivo, transiciones fluidas, modales con efecto glassmorphism y un flujo de compra completo con panel deslizable de carrito (Drawer Cart).
+El núcleo del proyecto reside en el desarrollo de un **sistema propio de componentes UI desacoplados y reutilizables**, integrando control de estados reactivo, animaciones vinculadas a la barra de desplazamiento (Scroll-Driven), carrusel horizontal con arrastre, modales con efecto glassmorphism y un flujo de compra completo con panel deslizable de carrito (Drawer Cart).
 
 ---
 
@@ -39,6 +39,22 @@ El núcleo del proyecto reside en el desarrollo de un **sistema propio de compon
 
 <div align="center">
   <img src="docs/screenshots/demo_compra.gif" width="95%" alt="Demostración de modal de producto y carrito de compra" style="border-radius: 8px;" />
+</div>
+
+<br />
+
+### 3. Animacion Interactiva Vinculada al Scroll (Scrollbar Driven)
+
+<div align="center">
+  <img src="docs/screenshots/demo_scroll_airpods.gif" width="95%" alt="Animación 3D vinculada al desplazamiento de la barra de scroll" style="border-radius: 8px;" />
+</div>
+
+<br />
+
+### 4. Carrusel Horizontal con Desplazamiento por Scroll
+
+<div align="center">
+  <img src="docs/screenshots/demo_carrusel.gif" width="95%" alt="Carrusel horizontal interactivo con navegación por scroll" style="border-radius: 8px;" />
 </div>
 
 ---
@@ -59,16 +75,17 @@ El catálogo clasifica dispositivos por categorías principales (Mouses, Teclado
 
 <br />
 
-### 2. Showcase Interactivo de Producto
+### 2. Showcase de Hardware Vinculado al Scroll
 
-Sección interactiva inspirada en landing pages de hardware de gama alta para destacar especificaciones acústicas y de ingeniería.
+Sección interactiva inspirada en landing pages de hardware de gama alta. La animación de despiece (Explode View) se sincroniza directamente con la posición de la barra de desplazamiento.
 
 <div align="center">
   <img src="docs/screenshots/03_showcase_airpods.png" width="95%" alt="Showcase interactivo de producto" style="border-radius: 6px;" />
 </div>
 
-* **Despiece Visual (Explode View):** Demostración de componentes internos de audio computacional y cancelación activa de ruido.
-* **Llamado a la Acción Directo:** Apertura directa del modal de configuración y compra.
+* **Sincronizacion de Scroll:** Conforme el usuario se desplaza verticalmente, el audífono emerge del estuche y revela sus componentes internos (driver acústico, almohadilla de silicona y procesador H2).
+* **Audio Computacional:** Explicación técnica de la cancelación activa de ruido y el rendimiento de baja latencia.
+* **Llamado a la Accion Directo:** Botón de compra rápida que despliega el modal de configuración de producto.
 
 <br />
 
@@ -86,14 +103,16 @@ Módulo de carrito persistente en estado lateral (Drawer) que permite gestionar 
 
 <br />
 
-### 4. Galeria de Marca y Comunidad Esports
+### 4. Galeria de Marca y Carrusel de Comunidad Esports
+
+Carrusel horizontal continuo diseñado para explorar la comunidad competitiva, jugadores profesionales (TenZ, Faker, NiKo) y setups de periféricos.
 
 <div align="center">
   <img src="docs/screenshots/05_galeria_esports.png" width="95%" alt="Galería de comunidad y jugadores profesionales" style="border-radius: 6px;" />
 </div>
 
-* **Respaldado Pro:** Tarjetas visuales de atletas de esports y periféricos oficiales en competencia.
-* **Grid Adaptativo:** Distribución fluida para monitores de alta resolución y dispositivos móviles.
+* **Desplazamiento Horizontal Fluido:** Navegación optimizada mediante scroll horizontal o arrastre táctil en dispositivos móviles.
+* **Respaldado Pro:** Tarjetas visuales de atletas de esports con su equipamiento oficial de torneo.
 
 ---
 
@@ -103,13 +122,13 @@ El proyecto se estructuró a partir de una suite de componentes personalizados u
 
 | Componente | Rol en el Sistema |
 | :--- | :--- |
-| **Modal / AlertModal** | Diálogos modales con backdrop blur (glassmorphism) para avisos y vista previa detallada de producto. |
+| **Modal / AlertModal** | Diálogos modales con backdrop blur (glassmorphism) para avisos y vista previa detallada de producto con selección de color. |
 | **SideBar (Drawer)** | Panel lateral deslizable para el carrito de compras con control de backdrop y cierre por teclado (`Esc`). |
 | **Stepper** | Selector numérico reactivo para control de cantidades en el carrito. |
 | **SwitchToggle** | Alternador de estado para filtros binarios y visualización de ofertas. |
 | **Tabs** | Pestañas de conmutación rápida entre categorías de producto sin recarga de página. |
-| **Carrusel** | Visor de productos y banners promocionales con navegación por flechas y gestos táctiles. |
-| **ShowcaseBox** | Contenedor interactivo para exhibición de hardware con variantes de color. |
+| **Carrusel (Scroll)** | Visor horizontal de galería con navegación continua por scroll y soporte táctil. |
+| **ShowcaseBox** | Contenedor interactivo para exhibición de hardware con variantes de color y animación vinculada al scroll. |
 | **Toast & Tooltip** | Notificaciones flotantes y microtextos de ayuda contextual. |
 
 ---
@@ -118,7 +137,7 @@ El proyecto se estructuró a partir de una suite de componentes personalizados u
 
 ```text
 ├── docs/
-│   └── screenshots/         # Capturas de pantalla en alta resolución y GIFs demostrativos
+│   └── screenshots/         # Capturas de pantalla en alta resolución y demostraciones animadas
 ├── public/                  # Recursos estáticos de la aplicación
 ├── src/
 │   ├── assets/              # Fotografías de productos y periféricos
@@ -149,7 +168,7 @@ El proyecto se estructuró a partir de una suite de componentes personalizados u
 
 ## Alcance del Proyecto
 
-Este repositorio forma parte de mi **portafolio profesional de desarrollo de software**, concebido para exhibir el diseño de librerías de componentes UI en **React 19**, la gestión de estados globales y la construcción de interfaces oscuras orientadas al sector gaming.
+Este repositorio forma parte de mi **portafolio profesional de desarrollo de software**, concebido para exhibir el diseño de librerías de componentes UI en **React 19**, la gestión de estados globales y la construcción de interfaces interactivas con animaciones sincronizadas al scroll orientadas al sector gaming.
 
 El código y material multimedia se presentan exclusivamente como muestra técnica de competencias Frontend y Full Stack.
 
